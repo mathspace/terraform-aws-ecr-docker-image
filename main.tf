@@ -1,9 +1,9 @@
 resource "aws_ecr_repository" "repo" {
-  name = "${var.image_name}"
+  name = var.image_name
 }
 
 resource "aws_ecr_lifecycle_policy" "repo-policy" {
-  repository = "${aws_ecr_repository.repo.name}"
+  repository = aws_ecr_repository.repo.name
 
   policy = <<EOF
 {
@@ -36,4 +36,6 @@ resource "aws_ecr_lifecycle_policy" "repo-policy" {
   ]
 }
 EOF
+
 }
+
