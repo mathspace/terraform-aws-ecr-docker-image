@@ -1,3 +1,7 @@
+terraform {
+  required_version = "~> 0.12.0"
+}
+
 resource "aws_ecr_repository" "repo" {
   name = var.image_name
 }
