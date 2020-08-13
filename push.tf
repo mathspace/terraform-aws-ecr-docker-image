@@ -1,12 +1,12 @@
 # Calculate hash of the Docker image source contents
 data "external" "hash" {
-  program = ["${coalesce(var.hash_script, "${path.module}/hash.sh")}", "${var.source_path}"]
+  program = [coalesce(var.hash_script, "${path.module}/hash.sh"), var.source_path]
 }
 
 # Build and push the Docker image whenever the hash changes
 resource "null_resource" "push" {
-  triggers {
-    hash = "${lookup(data.external.hash.result, "hash")}"
+  triggers = {
+    hash = data.external.hash.result["hash"]
   }
 
   provisioner "local-exec" {
@@ -14,3 +14,4 @@ resource "null_resource" "push" {
     interpreter = ["bash", "-c"]
   }
 }
+

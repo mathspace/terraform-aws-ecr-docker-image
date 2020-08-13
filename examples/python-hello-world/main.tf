@@ -1,4 +1,5 @@
 terraform {
+  required_version = "~> 0.12.0"
   backend "local" {
     path = "terraform.tfstate"
   }
@@ -13,3 +14,4 @@ module "python-hello-world" {
   image_name  = "python-hello-world"
   source_path = "${path.module}/src"
 }
+
