@@ -17,7 +17,9 @@ source_path=${1:-.}
 # Exclude Python cache files, dot files
 file_hashes="$(
     cd "$source_path" \
-    && find -s . -type f -not -name '*.pyc' -not -path './.**' -exec md5sum {} \;
+    && find . -type f -not -name '*.pyc' -not -path './.**' \
+    | sort \
+    | xargs md5sum
 )"
 
 hash="$(echo "$file_hashes" | md5sum | cut -d' ' -f1)"
