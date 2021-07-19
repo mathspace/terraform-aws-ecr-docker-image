@@ -1,5 +1,12 @@
 terraform {
-  required_version = "~> 0.12.0"
+  required_version = ">=1"
+
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+    }
+  }
+
   backend "local" {
     path = "terraform.tfstate"
   }
