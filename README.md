@@ -29,6 +29,7 @@ See [examples](examples).
 | push_script      | Path to script to build and push Docker image      | string |    `""`    |    no    |
 | source_path      | Path to Docker image source                        | string |    n/a     |   yes    |
 | tag              | Tag to use for deployed Docker image               | string | `"latest"` |    no    |
+| tags             | Tags to attach to created resources                | map    |   `""`     |    no    |
 
 ## Outputs
 

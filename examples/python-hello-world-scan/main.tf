@@ -22,4 +22,9 @@ module "python-hello-world" {
   source_path = "${path.module}/src"
 
   image_scan = "true"
+
+  tags = {
+    "Environment" = "Test",
+    "Cost Center" = "A"
+  }
 }

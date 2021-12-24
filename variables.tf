@@ -26,6 +26,12 @@ variable "tag" {
   default     = "latest"
 }
 
+variable "tags" {
+  description = "Tags to attach to created resources"
+  type        = map(any)
+  default     = {}
+}
+
 variable "hash_script" {
   description = "Path to script to generate hash of source contents"
   type        = string

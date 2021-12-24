@@ -10,6 +10,13 @@ resource "aws_ecr_repository" "repo" {
   image_scanning_configuration {
     scan_on_push = var.image_scan
   }
+
+  tags = merge(
+    var.tags,
+    tomap({
+      "Technology Name" = "Elastic Container Registry"
+    })
+  )
 }
 
 resource "aws_ecr_lifecycle_policy" "repo-policy" {
