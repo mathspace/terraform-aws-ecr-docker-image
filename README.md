@@ -20,13 +20,16 @@ See [examples](examples).
 
 ## Inputs
 
-| Name        | Description                                        |  Type  |  Default   | Required |
-| ----------- | -------------------------------------------------- | :----: | :--------: | :------: |
-| hash_script | Path to script to generate hash of source contents | string |    `""`    |    no    |
-| image_name  | Name of Docker image                               | string |    n/a     |   yes    |
-| push_script | Path to script to build and push Docker image      | string |    `""`    |    no    |
-| source_path | Path to Docker image source                        | string |    n/a     |   yes    |
-| tag         | Tag to use for deployed Docker image               | string | `"latest"` |    no    |
+| Name             | Description                                        |  Type  |  Default   | Required |
+| ---------------- | -------------------------------------------------- | :----: | :--------: | :------: |
+| hash_script      | Path to script to generate hash of source contents | string |    `""`    |    no    |
+| image_name       | Name of Docker image                               | string |    n/a     |   yes    |
+| image_scan       | Enable images scanning after being pushed          | string |  "false"   |    no    |
+| image_mutability | The tag mutability setting for the repository      | string |  "MUTABLE" |    no    |
+| push_script      | Path to script to build and push Docker image      | string |    `""`    |    no    |
+| source_path      | Path to Docker image source                        | string |    n/a     |   yes    |
+| tag              | Tag to use for deployed Docker image               | string | `"latest"` |    no    |
+| tags             | Tags to attach to created resources                | map    |   `""`     |    no    |
 
 ## Outputs
 
