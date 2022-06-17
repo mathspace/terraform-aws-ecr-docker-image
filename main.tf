@@ -45,6 +45,6 @@ EOF
 
 resource "aws_ecr_repository_policy" "repo-policy" {
   count      = var.repository_policy_path == null ? 0 : 1
-  repository = aws_ecr_repository.foo.name
+  repository = aws_ecr_repository.repo.name
   policy     = file(var.repository_policy_path)
 }
