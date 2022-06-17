@@ -26,3 +26,8 @@ variable "push_script" {
   default     = ""
 }
 
+variable "repository_policy_path" {
+  description = "Path to repository policy file"
+  type        = string
+  default     = null
+}
