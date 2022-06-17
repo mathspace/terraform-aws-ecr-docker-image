@@ -27,6 +27,7 @@ See [examples](examples).
 | push_script | Path to script to build and push Docker image      | string |    `""`    |    no    |
 | source_path | Path to Docker image source                        | string |    n/a     |   yes    |
 | tag         | Tag to use for deployed Docker image               | string | `"latest"` |    no    |
+| repository_policy_path         | File path to repository policy               | string | null|    no    |
 
 ## Outputs
 
