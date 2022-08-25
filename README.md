@@ -28,6 +28,7 @@ See [examples](examples).
 | source_path | Path to Docker image source                        | string |    n/a     |   yes    |
 | tag         | Tag to use for deployed Docker image               | string | `"latest"` |    no    |
 | repository_policy_path         | File path to repository policy               | string | null|    no    |
+| dockerfile_name         | Name of the dockerfile within the specified directory               | string | `"Dockerfile"` |    no    |
 
 ## Outputs
 

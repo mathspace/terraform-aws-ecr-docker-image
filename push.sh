@@ -14,12 +14,13 @@ set -e
 
 source_path="$1"
 repository_url="$2"
-tag="${3:-latest}"
+dockerfile_name="$3"
+tag="${4:-latest}"
 
 region="$(echo "$repository_url" | cut -d. -f4)"
 image_name="$(echo "$repository_url" | cut -d/ -f2)"
 
-(cd "$source_path" && docker build -t "$image_name" .)
+(cd "$source_path" && docker build -t "$image_name" -f "$dockerfile_name" .)
 
 aws ecr get-login-password --region "$region" | docker login --username AWS --password-stdin "$repository_url"
 docker tag "$image_name" "$repository_url":"$tag"

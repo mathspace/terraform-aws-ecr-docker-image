@@ -31,3 +31,9 @@ variable "repository_policy_path" {
   type        = string
   default     = null
 }
+
+variable "dockerfile_name" {
+  description = "Name of the dockerfile within the specified directory"
+  type        = string
+  default     = "Dockerfile"
+}
