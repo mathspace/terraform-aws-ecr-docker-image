@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # 
 # Builds a Docker image and pushes to an AWS ECR repository
 #
