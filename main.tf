@@ -4,6 +4,19 @@ terraform {
 
 resource "aws_ecr_repository" "repo" {
   name = var.image_name
+
+  image_tag_mutability = var.image_mutability
+
+  image_scanning_configuration {
+    scan_on_push = var.image_scan
+  }
+
+  tags = merge(
+    var.tags,
+    tomap({
+      "Technology Name" = "Elastic Container Registry"
+    })
+  )
 }
 
 resource "aws_ecr_lifecycle_policy" "repo-policy" {
@@ -42,4 +55,3 @@ resource "aws_ecr_lifecycle_policy" "repo-policy" {
 EOF
 
 }
-

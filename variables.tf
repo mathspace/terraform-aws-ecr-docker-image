@@ -3,6 +3,18 @@ variable "image_name" {
   type        = string
 }
 
+variable "image_scan" {
+  description = "Enable images scanning after being pushed to the repository"
+  type        = string
+  default     = "false"
+}
+
+variable "image_mutability" {
+  description = "The tag mutability setting for the repository"
+  type        = string
+  default     = "MUTABLE"
+}
+
 variable "source_path" {
   description = "Path to Docker image source"
   type        = string
@@ -12,6 +24,12 @@ variable "tag" {
   description = "Tag to use for deployed Docker image"
   type        = string
   default     = "latest"
+}
+
+variable "tags" {
+  description = "Tags to attach to created resources"
+  type        = map(any)
+  default     = {}
 }
 
 variable "hash_script" {
@@ -25,4 +43,3 @@ variable "push_script" {
   type        = string
   default     = ""
 }
-
