@@ -14,6 +14,12 @@ variable "tag" {
   default     = "latest"
 }
 
+variable "platform" {
+  description = "E.g. linux/amd64"
+  type        = string
+  default     = "linux/amd64"
+}
+
 variable "hash_script" {
   description = "Path to script to generate hash of source contents"
   type        = string
@@ -25,4 +31,3 @@ variable "push_script" {
   type        = string
   default     = ""
 }
-
