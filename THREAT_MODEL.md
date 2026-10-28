@@ -54,3 +54,7 @@ This is an offline, source-backed architecture review. No application execution,
 
 Repository: https://github.com/mathspace/terraform-aws-ecr-docker-image
 Version: d0e325c003360c325be9bc867827669e216cfd32
+
+## Scratch runtime
+
+The Docker runtime copies Python, its extension-library dependencies and application files from the build stage into `scratch`. Installation tools, pip and the shell remain outside the runtime. Native wheel libraries are included in dependency discovery. The builder and its package sources remain trusted; removing distribution metadata does not establish absence of vulnerabilities.
