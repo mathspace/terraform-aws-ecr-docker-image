@@ -35,3 +35,6 @@ See [examples](examples).
 | hash           | Docker image source hash           |
 | repository_url | ECR repository URL of Docker image |
 | tag            | Docker image tag                   |
+
+Docker builds require BuildKit and the Docker Buildx plugin. The publisher pulls
+referenced base images before building.
